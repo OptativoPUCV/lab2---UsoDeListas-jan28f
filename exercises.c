@@ -150,9 +150,9 @@ int parentesisBalanceados(char *cadena)
     dato = pop(parentesis);
     if (dato == NULL) return 0;
 
-    if (cadena[k] == ')' && cadena[*dato] != '(') return 0;
-    if (cadena[k] == ']' && cadena[*dato] != '[') return 0;
-    if (cadena[k] == '}' && cadena[*dato] != '{') return 0;
+    if (cadena[k] == '(' && cadena[*dato] != ')') return 0;
+    if (cadena[k] == '[' && cadena[*dato] != ']') return 0;
+    if (cadena[k] == '{' && cadena[*dato] != '}') return 0;
   }
 
   return 1;
