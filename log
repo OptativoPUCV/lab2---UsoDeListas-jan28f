@@ -97,3 +97,23 @@ Wed 20 Mar 2024 02:56:05 AM UTC:
  tests:  3|2
 total_score: 40/70
 9ea5da1
+Wed 20 Mar 2024 03:13:41 AM UTC: 
+ exercises.c | 18 +++++++++++++++++-
+ 1 file changed, 17 insertions(+), 1 deletion(-)
+In file included from test.c:5:
+exercises.c: In function ‘copia_pila’:
+exercises.c:117:3: error: dereferencing ‘void *’ pointer [-Werror]
+  117 |   *dato = pop(P3)
+      |   ^~~~~
+exercises.c:117:9: error: invalid use of void expression
+  117 |   *dato = pop(P3)
+      |         ^
+exercises.c:117:18: error: expected ‘;’ before ‘while’
+  117 |   *dato = pop(P3)
+      |                  ^
+      |                  ;
+  118 |   while (dato != NULL)
+      |   ~~~~~           
+cc1: all warnings being treated as errors
+Compilation failed
+76cdf3a
