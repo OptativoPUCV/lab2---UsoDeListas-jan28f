@@ -2,3 +2,16 @@ Wed 20 Mar 2024 12:23:57 AM UTC:
  tests:  0|5
 total_score: 0/70
 937f263
+Wed 20 Mar 2024 12:31:01 AM UTC: 
+ exercises.c | 11 +++++++++--
+ 1 file changed, 9 insertions(+), 2 deletions(-)
+In file included from test.c:5:
+exercises.c: In function ‘sumaLista’:
+exercises.c:60:14: error: invalid use of undefined type ‘struct List’
+   60 |     suma += L[i];
+      |              ^
+exercises.c:60:13: error: invalid use of incomplete typedef ‘List’
+   60 |     suma += L[i];
+      |             ^
+Compilation failed
+15d82d7
