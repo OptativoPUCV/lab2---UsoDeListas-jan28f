@@ -147,7 +147,8 @@ int parentesisBalanceados(char *cadena)
   int *dato;
   for (int k = 0 ; cadena[k] != '\0' ; k++)
   {
-      dato = pop(parentesis);
+    dato = pop(parentesis);
+    if (dato == NULL) return 0;
     
     if (cadena[k] == '(')
     {
