@@ -155,3 +155,17 @@ Wed 20 Mar 2024 07:05:49 PM UTC:
  tests:  9|0
 total_score: 70/70
 cdb3204
+Wed 20 Mar 2024 08:07:37 PM UTC: 
+ exercises.c | 31 +++----------------------------
+ 1 file changed, 3 insertions(+), 28 deletions(-)
+In file included from test.c:5:
+exercises.c: In function ‘parentesisBalanceados’:
+exercises.c:135:10: error: unused variable ‘parentesis’ [-Werror=unused-variable]
+  135 |   Stack *parentesis = create_stack();
+      |          ^~~~~~~~~~
+exercises.c:143:1: error: control reaches end of non-void function [-Werror=return-type]
+  143 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+c34ce8b
