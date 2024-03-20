@@ -151,19 +151,16 @@ int parentesisBalanceados(char *cadena)
     
     if (cadena[k] == '(')
     {
-      printf("%c %c", cadena[k], cadena[*dato]);
       if (cadena[*dato] != ')')
         return 0; 
     }
     if (cadena[k] == '{')
     {
-      printf("%c %c", cadena[k], cadena[*dato]);
       if (cadena[*dato] != '}')
         return 0; 
     }
     if (cadena[k] == '[')
     {
-      printf("%c %c", cadena[k], cadena[*dato]);
       if (cadena[*dato] != ']')
         return 0; 
     }
