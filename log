@@ -15,3 +15,20 @@ exercises.c:60:13: error: invalid use of incomplete typedef ‘List’
       |             ^
 Compilation failed
 15d82d7
+Wed 20 Mar 2024 01:07:35 AM UTC: 
+ exercises.c | 13 +++++++++++--
+ 1 file changed, 11 insertions(+), 2 deletions(-)
+In file included from test.c:5:
+exercises.c: In function ‘sumaLista’:
+exercises.c:71:3: error: expected expression before ‘return’
+   71 |   return suma;
+      |   ^~~~~~
+exercises.c:65:7: error: variable ‘suma’ set but not used [-Werror=unused-but-set-variable]
+   65 |   int suma = 0;
+      |       ^~~~
+exercises.c:72:1: error: control reaches end of non-void function [-Werror=return-type]
+   72 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+43ff625
