@@ -137,8 +137,12 @@ int parentesisBalanceados(char *cadena)
   
   for (int i = 0 ; cadena[i] != '\0' ; i++)
   {
+    int *indice = (int *)malloc(sizeof(int));
+    if (indice == NULL) exit(EXIT_FAILURE);
+    *indice = i;
+    
     if (cadena[i] == ')' || cadena[i] == ']' || cadena[i] == '}')
-      push(parentesis, &i);
+      push(parentesis, indice);
   }
 
   int *dato;
