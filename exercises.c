@@ -138,25 +138,25 @@ int parentesisBalanceados(char *cadena)
   for (int i = 0 ; cadena[i] != '\0' ; i++)
   {
     if (cadena[i] == ')' || cadena[i] == ']' || cadena[i] == '}')
-      push(parentesis, i);
+      push(parentesis, &i);
   }
 
   int *dato;
-  for (int i = 0 ; cadena[i] != '\0' ; i++)
+  for (int k = 0 ; cadena[k] != '\0' ; k++)
   {
       dato = pop(parentesis);
     
-    if (cadena[i] == '(')
+    if (cadena[k] == '(')
     {
       if (cadena[*dato] == ')')
         return balanceado; 
     }
-    if (cadena[i] == '{')
+    if (cadena[k] == '{')
     {
       if (cadena[*dato] == '}')
         return balanceado; 
     }
-    if (cadena[i] == '[')
+    if (cadena[k] == '[')
     {
       if (cadena[*dato] == ']')
         return balanceado; 
