@@ -117,3 +117,17 @@ exercises.c:117:18: error: expected ‘;’ before ‘while’
 cc1: all warnings being treated as errors
 Compilation failed
 76cdf3a
+Wed 20 Mar 2024 03:13:49 AM UTC: 
+ exercises.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+exercises.c: In function ‘copia_pila’:
+exercises.c:117:3: error: dereferencing ‘void *’ pointer [-Werror]
+  117 |   *dato = pop(P3);
+      |   ^~~~~
+exercises.c:117:9: error: invalid use of void expression
+  117 |   *dato = pop(P3);
+      |         ^
+cc1: all warnings being treated as errors
+Compilation failed
+892a278
