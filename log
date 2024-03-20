@@ -66,3 +66,14 @@ exercises.c:94:26: error: expected ‘;’ before ‘}’ token
       |   ~                       
 Compilation failed
 958b304
+Wed 20 Mar 2024 02:52:29 AM UTC: 
+ exercises.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+In file included from test.c:5:
+exercises.c: In function ‘eliminaElementos’:
+exercises.c:95:10: error: unused variable ‘dato’ [-Werror=unused-variable]
+   95 |     int *dato = (int *)next(L);
+      |          ^~~~
+cc1: all warnings being treated as errors
+Compilation failed
+dd983b4
