@@ -132,66 +132,17 @@ paraéntesis balanceados. Retorna 1 si están balanceados,
 
 int parentesisBalanceados(char *cadena)
 {
-  Stack *parentesis = create_stack();
-  
-  for (int i = 0 ; cadena[i] != '\0' ; i++)
-  {
-    int *indice = (int *)malloc(sizeof(int));
-    if (indice == NULL) exit(EXIT_FAILURE);
-    *indice = i;
-    
-    if (cadena[i] == ')' || cadena[i] == ']' || cadena[i] == '}')
-      push(parentesis, indice);
-  }
+  Stack *posParentesis = create_stack();
 
-  int *dato;
-  for (int k = 0 ; cadena[k] != '\0' ; k++)
-  {
-    dato = pop(parentesis);
-    if (dato == NULL) return 0;
-    
-    if (cadena[k] == ')' && *dato != '(') return 0;
-    if (cadena[k] == ']' && *dato != '[') return 0;
-    if (cadena[k] == '}' && *dato != '{') return 0;
-  }
-
-  return 1;
-}
-
-/*
-int parentesisBalanceados(char *cadena)
-{
-  Stack *parentesis = create_stack();
-  int balanceado = 0;
-  
   for (int i = 0 ; cadena[i] != '\0' ; i++)
   {
     if (cadena[i] == ')' || cadena[i] == ']' || cadena[i] == '}')
-      push(parentesis, &cadena[i]);
-  }
+    {
+      int *pos = (int *)malloc(sizeof(int));
+      if (pos == NULL) exit(EXIT_FAILURE);
 
-  char *caracter;
-  for (int i = 0 ; cadena[i] != '\0' ; i++)
-  {
-    caracter = pop(parentesis);
-    
-    if (cadena[i] == '(')
-    {
-      if (caracter == ')')
-        return balanceado; 
-    }
-    if (cadena[i] == '{')
-    {
-      if (strcmp(pop(parentesis), &cadena[i]) != 0)
-        return balanceado; 
-    }
-    if (cadena[i] == '[')
-    {
-      if (strcmp(pop(parentesis), &cadena[i]) != 0)
-        return balanceado; 
+      *pos = i;
+      push(posParentesis, pos);
     }
   }
-
-  return 1;
 }
-*/
