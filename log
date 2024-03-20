@@ -77,3 +77,17 @@ exercises.c:95:10: error: unused variable ‘dato’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 dd983b4
+Wed 20 Mar 2024 02:55:40 AM UTC: 
+ exercises.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+exercises.c: In function ‘eliminaElementos’:
+exercises.c:95:16: error: initialization of ‘int’ from ‘int *’ makes integer from pointer without a cast [-Werror=int-conversion]
+   95 |     int dato = (int *)next(L);
+      |                ^
+exercises.c:95:9: error: unused variable ‘dato’ [-Werror=unused-variable]
+   95 |     int dato = (int *)next(L);
+      |         ^~~~
+cc1: all warnings being treated as errors
+Compilation failed
+d56c124
