@@ -132,30 +132,29 @@ paraéntesis balanceados. Retorna 1 si están balanceados,
 
 int parentesisBalanceados(char *cadena)
 {
-  Stack *posParentesis = create_stack();
-
-  for (int i = 0 ; cadena[i] != '\0' ; i++)
-  {
-    if (cadena[i] == ')' || cadena[i] == ']' || cadena[i] == '}')
+  Stack *P = create_stack();
+  int i = 0;
+  int balanceado = 1;
+  char *dato;
+  while (cadena[i] != '\0' && balanceado)
     {
-      int *pos = (int *)malloc(sizeof(int));
-      if (pos == NULL) exit(EXIT_FAILURE);
-
-      *pos = i;
-      push(posParentesis, pos);
+      dato = (char *)malloc(sizeof(char));
+      *dato = cadena[i];
+      if (*dato == '(')
+      {
+        push(P, dato);
+        
+      }
+      else
+      {
+        if (top(P) == NULL)
+          balanceado = 0;
+        else
+          pop(P);
+      }
+      i++;
     }
-  }
-
-  int *pos = pop(posParentesis);
-  while (pos != NULL)
-  {
-    for (int k = 0 ; cadena[k] != '\0' ; k++)
-    {
-      printf("%c%c", cadena[k],cadena[*pos]);
-
-      pos = pop(posParentesis);
-    }
-  }
-
-  return 1;
+  if (top(P) != NULL)
+    balanceado = 0;
+  return balanceado;
 }
