@@ -138,15 +138,54 @@ int parentesisBalanceados(char *cadena)
   for (int i = 0 ; cadena[i] != '\0' ; i++)
   {
     if (cadena[i] == ')' || cadena[i] == ']' || cadena[i] == '}')
-      push(parentesis, &cadena[i]);
+      push(parentesis, &i);
   }
 
+  int *dato;
+  for (int i = 0 ; cadena[i] != '\0' ; i++)
+  {
+      dato = pop(parentesis);
+    
+    if (cadena[i] == '(')
+    {
+      if (cadena[*dato] == ')')
+        return balanceado; 
+    }
+    if (cadena[i] == '{')
+    {
+      if (cadena[*dato] == '}')
+        return balanceado; 
+    }
+    if (cadena[i] == '[')
+    {
+      if (cadena[*dato] == ']')
+        return balanceado; 
+    }
+  }
+
+  return 1;
+}
+
+/*
+int parentesisBalanceados(char *cadena)
+{
+  Stack *parentesis = create_stack();
+  int balanceado = 0;
   
   for (int i = 0 ; cadena[i] != '\0' ; i++)
   {
+    if (cadena[i] == ')' || cadena[i] == ']' || cadena[i] == '}')
+      push(parentesis, &cadena[i]);
+  }
+
+  char *caracter;
+  for (int i = 0 ; cadena[i] != '\0' ; i++)
+  {
+    caracter = pop(parentesis);
+    
     if (cadena[i] == '(')
     {
-      if (strcmp(pop(parentesis), &cadena[i]) != 0)
+      if (caracter == ')')
         return balanceado; 
     }
     if (cadena[i] == '{')
@@ -163,4 +202,4 @@ int parentesisBalanceados(char *cadena)
 
   return 1;
 }
-
+*/
