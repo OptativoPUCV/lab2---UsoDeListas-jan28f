@@ -145,4 +145,6 @@ int parentesisBalanceados(char *cadena)
       push(posParentesis, pos);
     }
   }
+
+  return 1;
 }
