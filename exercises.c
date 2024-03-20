@@ -133,7 +133,37 @@ paraéntesis balanceados. Retorna 1 si están balanceados,
 int parentesisBalanceados(char *cadena)
 {
   
+  Stack *pila = create_stack();
+  int i = 0;
   
-  return 0;
+  while (cadena[i] != '\0')
+  {
+    if (cadena[i] == '(' || cadena[i] == '[' || cadena[i] == '{')
+    {
+      push(pila, &cadena[i]);
+    }
+    else if (cadena[i] == ')' || cadena[i] == ']' || cadena[i] == '}')
+    {
+      if (top(pila) == NULL)
+      {
+        return 0; // Parentesis desbalanceados
+      }
+
+      char opening_char = *(char *)pop(pila);
+      if (!((opening_char == '(' && cadena[i] == ')') || (opening_char == '[' && cadena[i] == ']') || (opening_char == '{' && cadena[i] == '}')))
+      {
+        return 0; // Parentesis desbalanceados
+      }
+    }
+    
+    i++;
+  }
+  
+  if (top(pila) != NULL)
+  {
+    return 0; // Parentesis desbalanceados
+  }
+  
+  return 1; // Parentesis balanceados
 }
 
