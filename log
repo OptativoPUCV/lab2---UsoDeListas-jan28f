@@ -50,3 +50,19 @@ Wed 20 Mar 2024 01:47:13 AM UTC:
  tests:  2|3
 total_score: 20/70
 6602435
+Wed 20 Mar 2024 02:42:18 AM UTC: 
+ exercises.c | 9 ++++++++-
+ 1 file changed, 8 insertions(+), 1 deletion(-)
+In file included from test.c:5:
+exercises.c: In function ‘eliminaElementos’:
+exercises.c:94:18: error: expected expression before ‘List’
+   94 |       popCurrent(List *L)
+      |                  ^~~~
+exercises.c:94:26: error: expected ‘;’ before ‘}’ token
+   94 |       popCurrent(List *L)
+      |                          ^
+      |                          ;
+   95 |   }
+      |   ~                       
+Compilation failed
+958b304
