@@ -63,7 +63,16 @@ retorne la suma de sus elementos.
 */
 int sumaLista(List *L)
 {
-  return 0;
+  int suma = 0;
+  int *dato = (int *)first(L);
+
+  while(dato != NULL)
+    {
+      suma += *dato;
+      dato = (int *)next(L);
+    }
+  
+  return suma;
 }
 
 /*
