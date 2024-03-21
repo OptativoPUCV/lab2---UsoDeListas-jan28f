@@ -151,9 +151,8 @@ int parentesisBalanceados(char *cadena)
       else if ((*caracterInc == '(' && *caracter == ')') ||
                (*caracterInc == '{' && *caracter == '}') ||
                (*caracterInc == '[' && *caracter == ']'))
-      {
         pop(parentesis);
-      }
+      
       else return 0;
     }
   }
