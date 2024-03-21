@@ -150,7 +150,7 @@ int parentesisBalanceados(char *cadena)
       if (caracterInc == NULL) return 0;
       else if ((*caracterInc == '(' && *caracter == ')') ||
                (*caracterInc == '{' && *caracter == '}') ||
-                *caracterInc == '[' && *caracter == ']')
+               (*caracterInc == '[' && *caracter == ']'))
       {
         pop(parentesis);
       }
