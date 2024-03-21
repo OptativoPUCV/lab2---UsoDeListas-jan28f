@@ -440,3 +440,14 @@ exercises.c:152:18: error: ‘datoInicial’ undeclared (first use in this funct
       |                  ^~~~~~~~~~~
 Compilation failed
 df5be8c
+Thu 21 Mar 2024 01:35:40 AM UTC: 
+ exercises.c | 34 ++++++++++++++++------------------
+ 1 file changed, 16 insertions(+), 18 deletions(-)
+In file included from test.c:5:
+exercises.c: In function ‘parentesisBalanceados’:
+exercises.c:153:37: error: suggest parentheses around ‘&&’ within ‘||’ [-Werror=parentheses]
+  153 |                 *caracterInc == '[' && *caracter == ']')
+      |                 ~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+c9b236e
