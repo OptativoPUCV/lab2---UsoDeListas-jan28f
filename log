@@ -358,3 +358,14 @@ exercises.c:139:17: error: initialization of ‘char *’ from ‘char’ makes 
 cc1: all warnings being treated as errors
 Compilation failed
 ce92b3e
+Thu 21 Mar 2024 12:42:21 AM UTC: 
+ exercises.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+exercises.c: In function ‘parentesisBalanceados’:
+exercises.c:139:17: error: cast to pointer from integer of different size [-Werror=int-to-pointer-cast]
+  139 |       char *p = (char *)cadena[i];
+      |                 ^
+cc1: all warnings being treated as errors
+Compilation failed
+eff348d
