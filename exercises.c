@@ -149,9 +149,9 @@ int parentesisBalanceados(char *cadena)
       char *datoFinal = (char *)top(pila);
       if (top_element == NULL)
           return 0;  // Hay un cierre sin su correspondiente apertura
-      else if ((*p == ')' && *top_element == '(') ||
-               (*p == ']' && *top_element == '[') ||
-               (*p == '}' && *top_element == '{')) {
+      else if ((*datoInicial == ')' && *top_element == '(') ||
+               (*datoInicial == ']' && *top_element == '[') ||
+               (*datoInicial == '}' && *top_element == '{')) {
           pop(pila);  // Los paréntesis coinciden, se eliminan de la pila
       } 
       else 
