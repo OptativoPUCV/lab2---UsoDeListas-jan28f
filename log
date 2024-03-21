@@ -404,3 +404,21 @@ Thu 21 Mar 2024 12:47:03 AM UTC:
  tests:  9|0
 total_score: 70/70
 6f10a06
+Thu 21 Mar 2024 01:10:31 AM UTC: 
+ exercises.c | 27 ++++++++++++++++-----------
+ 1 file changed, 16 insertions(+), 11 deletions(-)
+In file included from test.c:5:
+exercises.c: In function ‘parentesisBalanceados’:
+exercises.c:148:5: error: expected ‘(’ before ‘{’ token
+  148 |     {
+      |     ^
+      |     (
+exercises.c:150:11: error: ‘top_element’ undeclared (first use in this function)
+  150 |       if (top_element == NULL)
+      |           ^~~~~~~~~~~
+exercises.c:150:11: note: each undeclared identifier is reported only once for each function it appears in
+exercises.c:152:18: error: ‘p’ undeclared (first use in this function)
+  152 |       else if ((*p == ')' && *top_element == '(') ||
+      |                  ^
+Compilation failed
+6dfdd03

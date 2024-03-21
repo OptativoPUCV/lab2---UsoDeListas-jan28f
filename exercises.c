@@ -132,29 +132,34 @@ paraéntesis balanceados. Retorna 1 si están balanceados,
 
 int parentesisBalanceados(char *cadena)
 {
-    Stack *pila = create_stack();
+  Stack *pila = create_stack();
 
-    for (char *p = cadena; *p != '\0'; p++) {
-        if (*p == '(' || *p == '[' || *p == '{') {
-            push(pila, p);
-        } else if (*p == ')' || *p == ']' || *p == '}') {
-            char *top_element = (char *)top(pila);
-            if (top_element == NULL)
-                return 0;  // Hay un cierre sin su correspondiente apertura
-            else if ((*p == ')' && *top_element == '(') ||
-                     (*p == ']' && *top_element == '[') ||
-                     (*p == '}' && *top_element == '{')) {
-                pop(pila);  // Los paréntesis coinciden, se eliminan de la pila
-            } else {
-                return 0;  // Los paréntesis no coinciden
-            }
-        }
+  for (int i = 0 ; cadena[i] != '\0' ; i++)
+  {
+    if (cadena[i] == '(' || cadena[i] == '[' || cadena[i] == '{')
+    {
+      char *datoInicial = (char *)malloc(sizeof(char));
+      if (datoInicial == NULL) exit(EXIT_FAILURE);
+
+      *datoInicial = cadena[i];
+      push(pila, datoInicial);
     }
+    else if
+    {
+      char *datoFinal = (char *)top(pila);
+      if (top_element == NULL)
+          return 0;  // Hay un cierre sin su correspondiente apertura
+      else if ((*p == ')' && *top_element == '(') ||
+               (*p == ']' && *top_element == '[') ||
+               (*p == '}' && *top_element == '{')) {
+          pop(pila);  // Los paréntesis coinciden, se eliminan de la pila
+      } 
+      else 
+      {
+          return 0;  // Los paréntesis no coinciden
+      }
+    }
+  }
 
-    // Si la pila no está vacía al final, hay paréntesis sin cerrar
-    if (top(pila) != NULL)
-        return 0;
-
-    // Si la pila está vacía, todos los paréntesis están balanceados
-    return 1;
+  return 1;
 }
