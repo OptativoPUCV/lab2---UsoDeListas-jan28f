@@ -136,19 +136,19 @@ int parentesisBalanceados(char *cadena)
 
     for (int i = 0 ; cadena[i] != '\0' ; i++)
     {
-      char *p = cadena[i];
-        if (*p == '(' || *p == '[' || *p == '{') 
+      char p = cadena[i];
+        if (p == '(' || p == '[' || p == '{') 
         {
             push(pila, p);
         } 
-        else if (*p == ')' || *p == ']' || *p == '}') 
+        else if (p == ')' || p == ']' || p == '}') 
         {
             char *top_element = (char *)top(pila);
             if (top_element == NULL)
                 return 0;  // Hay un cierre sin su correspondiente apertura
-            else if ((*p == ')' && *top_element == '(') ||
-                     (*p == ']' && *top_element == '[') ||
-                     (*p == '}' && *top_element == '{')) {
+            else if ((p == ')' && *top_element == '(') ||
+                     (p == ']' && *top_element == '[') ||
+                     (p == '}' && *top_element == '{')) {
                 pop(pila);  // Los paréntesis coinciden, se eliminan de la pila
             } 
             else 
