@@ -133,12 +133,16 @@ paraéntesis balanceados. Retorna 1 si están balanceados,
 int parentesisBalanceados(char *cadena)
 {
     Stack *pila = create_stack();
-    char *p = cadena;
 
-    while (*p != '\0') {
-        if (*p == '(' || *p == '[' || *p == '{') {
+    for (int i = 0 ; cadena[i] != '\0' ; i++)
+    {
+      char *p = cadena[i];
+        if (*p == '(' || *p == '[' || *p == '{') 
+        {
             push(pila, p);
-        } else if (*p == ')' || *p == ']' || *p == '}') {
+        } 
+        else if (*p == ')' || *p == ']' || *p == '}') 
+        {
             char *top_element = (char *)top(pila);
             if (top_element == NULL)
                 return 0;  // Hay un cierre sin su correspondiente apertura
@@ -146,11 +150,12 @@ int parentesisBalanceados(char *cadena)
                      (*p == ']' && *top_element == '[') ||
                      (*p == '}' && *top_element == '{')) {
                 pop(pila);  // Los paréntesis coinciden, se eliminan de la pila
-            } else {
+            } 
+            else 
+            {
                 return 0;  // Los paréntesis no coinciden
             }
         }
-        p++;
     }
 
     // Si la pila no está vacía al final, hay paréntesis sin cerrar
