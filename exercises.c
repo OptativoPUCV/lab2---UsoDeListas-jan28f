@@ -136,28 +136,32 @@ int parentesisBalanceados(char *cadena)
 
   for (int i = 0 ; cadena[i] != '\0' ; i++)
   {
-    if (cadena[i] == '(' || cadena[i] == '{' || cadena[i] == '[')
+    char caracter = cadena[i];
+    
+    if (caracter == '(' || caracter == '{' || caracter == '[')
     {
-      char *caracter = (char *)malloc(sizeof(char));
-      if (caracter == NULL) exit(EXIT_FAILURE);
-      *caracter = cadena[i];
+      char *ptrCaracter = (char *)malloc(sizeof(char));
+      if (ptrCaracter == NULL) 
+        exit(EXIT_FAILURE);
+      *ptrCaracter = cadena[i];
       
-      push(parentesis, caracter);
+      push(parentesis, ptrCaracter);
     }
-    else if (cadena[i] == ')' || cadena[i] == '}' || cadena[i] == ']')
+    else if (caracter == ')' || caracter == '}' || caracter == ']')
     {
       char *caracterInc = (char *)top(parentesis);
       
-      if (caracterInc == NULL) return 0;
-      else if ((*caracterInc == '(' && cadena[i] == ')') ||
-               (*caracterInc == '{' && cadena[i] == '}') ||
-               (*caracterInc == '[' && cadena[i] == ']'))
+      if (caracterInc == NULL) 
+        return 0;
+      else if ((*caracterInc == '(' && caracter == ')') ||
+               (*caracterInc == '{' && caracter == '}') ||
+               (*caracterInc == '[' && caracter == ']'))
         pop(parentesis);
-      
-      else return 0;
+      else 
+        return 0;
     }
   }
-  
-  if (top(parentesis) != NULL) return 0;
+  if (top(parentesis) != NULL) 
+    return 0;
   return 1;
 }
