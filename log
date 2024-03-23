@@ -463,3 +463,15 @@ Thu 21 Mar 2024 05:31:06 PM UTC:
  tests:  9|0
 total_score: 70/70
 453683c
+Sat 23 Mar 2024 06:43:57 PM UTC: 
+ exercises.c | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
+In file included from test.c:5:
+exercises.c: In function ‘parentesisBalanceados’:
+exercises.c:152:41: error: ‘caracter’ undeclared (first use in this function); did you mean ‘caracterInc’?
+  152 |       else if ((*caracterInc == '(' && *caracter == ')') ||
+      |                                         ^~~~~~~~
+      |                                         caracterInc
+exercises.c:152:41: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+021c409
