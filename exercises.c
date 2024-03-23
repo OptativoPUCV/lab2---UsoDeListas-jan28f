@@ -143,7 +143,7 @@ int parentesisBalanceados(char *cadena)
       char *ptrCaracter = (char *)malloc(sizeof(char));
       if (ptrCaracter == NULL) 
         exit(EXIT_FAILURE);
-      *ptrCaracter = cadena[i];
+      *ptrCaracter = caracter;
       
       push(parentesis, ptrCaracter);
     }
