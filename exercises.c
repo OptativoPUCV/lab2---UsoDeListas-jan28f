@@ -141,9 +141,8 @@ int parentesisBalanceados(char *cadena)
     *caracter = cadena[i];
     
     if (cadena[i] == '(' || cadena[i] == '{' || cadena[i] == '[')
-    {
       push(parentesis, caracter);
-    }
+  
     else if (cadena[i] == ')' || cadena[i] == '}' || cadena[i] == ']')
     {
       char *caracterInc = (char *)top(parentesis);
