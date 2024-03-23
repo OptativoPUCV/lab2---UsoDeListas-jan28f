@@ -149,13 +149,14 @@ int parentesisBalanceados(char *cadena)
       char *caracterInc = (char *)top(parentesis);
       
       if (caracterInc == NULL) return 0;
-      else if ((*caracterInc == '(' && *caracter == ')') ||
-               (*caracterInc == '{' && *caracter == '}') ||
-               (*caracterInc == '[' && *caracter == ']'))
+      else if ((*caracterInc == '(' && cadena[i] == ')') ||
+               (*caracterInc == '{' && cadena[i] == '}') ||
+               (*caracterInc == '[' && cadena[i] == ']'))
         pop(parentesis);
       
       else return 0;
     }
+    else free(caracter);
   }
   
   if (top(parentesis) != NULL) return 0;

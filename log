@@ -505,3 +505,14 @@ exercises.c:152:41: error: ‘caracter’ undeclared (first use in this function
 exercises.c:152:41: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 c778eb9
+Sat 23 Mar 2024 10:28:24 PM UTC: 
+ exercises.c | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
+In file included from test.c:5:
+exercises.c: In function ‘parentesisBalanceados’:
+exercises.c:159:15: error: ‘caracter’ undeclared (first use in this function)
+  159 |     else free(caracter);
+      |               ^~~~~~~~
+exercises.c:159:15: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+7313076
