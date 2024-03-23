@@ -156,7 +156,6 @@ int parentesisBalanceados(char *cadena)
       
       else return 0;
     }
-    else free(caracter);
   }
   
   if (top(parentesis) != NULL) return 0;

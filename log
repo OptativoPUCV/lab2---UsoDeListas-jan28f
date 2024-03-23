@@ -516,3 +516,9 @@ exercises.c:159:15: error: ‘caracter’ undeclared (first use in this function
 exercises.c:159:15: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 7313076
+Sat 23 Mar 2024 10:28:30 PM UTC: 
+ exercises.c | 1 -
+ 1 file changed, 1 deletion(-)
+ tests:  9|0
+total_score: 70/70
+1a561eb
